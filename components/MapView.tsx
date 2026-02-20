@@ -118,11 +118,13 @@ export default function MapView({ destinations, className, onMarkerClick, mapIns
     }, []);
 
     // ── Style switching ────────────────────────────────────────────────────────
-    // Runs whenever the parent changes styleUrl. Skips on first render (map init
-    // already uses the correct style). Re-adds markers after styedata loads.
+    // Track the last applied URL so we only call setStyle when it genuinely changes.
+    const appliedStyle = useRef<string>(styleUrl ?? '');
+
     useEffect(() => {
         if (!map.current || !styleUrl) return;
-        if (map.current.getStyle()?.name === styleUrl) return;
+        if (styleUrl === appliedStyle.current) return;
+        appliedStyle.current = styleUrl;
         map.current.setStyle(styleUrl);
     }, [styleUrl]);
 

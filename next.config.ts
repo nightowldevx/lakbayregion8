@@ -15,9 +15,12 @@ const ContentSecurityPolicy = `
     https://basemaps.cartocdn.com;
   connect-src 'self'
     https://*.supabase.co
+    https://*.openfreemap.org
     https://tiles.openfreemap.org
-    https://basemaps.cartocdn.com;
-  frame-src 'none';
+    https://basemaps.cartocdn.com
+    https://api.maptiler.com;
+  worker-src blob:;
+  frame-src https://www.google.com;
   object-src 'none';
   base-uri 'self';
   form-action 'self';
