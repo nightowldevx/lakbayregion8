@@ -60,15 +60,13 @@ First deploy takes ~2 minutes.
 
 ---
 
-## 5. Add your production domain to Supabase CORS
+## 5. Supabase — no CORS config needed
 
-After deploying, Supabase needs to know your production URL.
+This project queries Supabase **server-side only** (via Next.js Server Components).
+Requests come from Vercel's servers, not the browser — so Supabase CORS settings
+are not applicable and you don't need to configure anything on the Supabase dashboard.
 
-1. Go to **Supabase → Project Settings → API → Allowed Origins**
-2. Add your Vercel URL: `https://lakbay-region8.vercel.app`
-3. If using a custom domain, add that too
-
-Without this step, Supabase requests will be blocked in production.
+> The only Supabase setting that matters is **RLS** — which is already enabled.
 
 ---
 
@@ -77,7 +75,6 @@ Without this step, Supabase requests will be blocked in production.
 1. Vercel Dashboard → **Domains → Add Domain**
 2. Add your domain (e.g. `lakbayregion8.ph`)
 3. Follow Vercel's DNS instructions for your registrar
-4. Add the custom domain to Supabase Allowed Origins as well
 
 ---
 
