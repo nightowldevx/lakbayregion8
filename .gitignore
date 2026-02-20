@@ -39,3 +39,16 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# editor directories
+.vscode/
+.idea/
+
+# general logs
+*.log
+
+# os artifacts
+Thumbs.db
+
+# turbopack cache
+.turbo
