@@ -65,6 +65,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          {/* Announcement banner */}
+          <div className="w-full bg-green-600 text-white text-center text-sm font-medium py-2 px-4">
+            Some information needs to be updated! Feel free to explore!
+          </div>
           <Navbar />
           <main>{children}</main>
           <Footer />
